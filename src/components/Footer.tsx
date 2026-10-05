@@ -240,24 +240,29 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* 2. MARQUEE TICKER (Visual Transition) */}
-      <div className="w-full py-2.5 bg-[#1c1b23]/70 border-y border-white/5 overflow-hidden whitespace-nowrap shadow-[inset_0_0_12px_rgba(0,245,255,0.08)]">
-        <div className="inline-flex gap-8 items-center font-['JetBrains_Mono'] text-xs text-[#b9caca] uppercase tracking-widest">
-          <span className="flex items-center gap-1.5 text-[#00f5ff]">
-            <Zap className="w-3.5 h-3.5" /> EXPERIMENTAL REPO ACTIVE
-          </span>
-          <span>•</span>
-          <span className="text-[#ffaced]">WEBGL SHADERS V4 READY</span>
-          <span>•</span>
-          <span className="text-[#79ff5b]">LATENCY: 12MS</span>
-          <span>•</span>
-          <span className="text-white">ACCEPTING CREATIVE TECH COMMISSIONS</span>
-          <span>•</span>
-          <span className="flex items-center gap-1.5 text-[#00f5ff]">
-            <Terminal className="w-3.5 h-3.5" /> NEURAL AUDIO ENGINE SYNCED
-          </span>
-          <span>•</span>
-          <span className="text-[#ffaced]">THREE.JS R164 RUNTIME</span>
+      {/* 2. MARQUEE TICKER (Visual Transition - Continuous Left to Right Scroll) */}
+      <div className="w-full py-2.5 bg-[#1c1b23]/70 border-y border-white/5 overflow-hidden whitespace-nowrap shadow-[inset_0_0_12px_rgba(0,245,255,0.08)] select-none">
+        <div className="animate-marquee-ltr">
+          {[1, 2, 3, 4].map((groupKey) => (
+            <div key={groupKey} className="inline-flex gap-8 items-center font-['JetBrains_Mono'] text-xs text-[#b9caca] uppercase tracking-widest px-4">
+              <span className="flex items-center gap-1.5 text-[#00f5ff]">
+                <Zap className="w-3.5 h-3.5" /> EXPERIMENTAL REPO ACTIVE
+              </span>
+              <span>•</span>
+              <span className="text-[#ffaced]">WEBGL SHADERS V4 READY</span>
+              <span>•</span>
+              <span className="text-[#79ff5b]">LATENCY: 12MS</span>
+              <span>•</span>
+              <span className="text-white">ACCEPTING CREATIVE TECH COMMISSIONS</span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5 text-[#00f5ff]">
+                <Terminal className="w-3.5 h-3.5" /> NEURAL AUDIO ENGINE SYNCED
+              </span>
+              <span>•</span>
+              <span className="text-[#ffaced]">THREE.JS R164 RUNTIME</span>
+              <span>•</span>
+            </div>
+          ))}
         </div>
       </div>
 
