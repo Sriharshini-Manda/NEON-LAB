@@ -1,0 +1,6 @@
+{
+  "name": "NEON LAB",
+  "description": "High-voltage digital playground & creative engineering laboratory exploring WebGL shaders, generative UI, and tactile cybernetic systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
