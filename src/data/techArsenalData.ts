@@ -87,7 +87,7 @@ export const LAB_METRICS = [
   },
   {
     key: 'SYS_UPTIME',
-    value: '99.8%',
+    value: '99%',
     label: 'Caffeine conversion rate & uninterrupted build flow',
     color: '#3bff17',
   },
