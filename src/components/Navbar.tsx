@@ -84,7 +84,7 @@ export default function Navbar() {
             to="/about"
             className={({ isActive }) =>
               `transition-all duration-200 cursor-pointer ${
-                isActive
+                isActive && location.hash !== '#contact'
                   ? 'text-[#00f5ff] font-bold drop-shadow-[0_0_8px_rgba(0,245,255,0.6)] border-b border-[#00f5ff]/60 pb-1'
                   : 'text-[#b9caca] hover:text-[#00f5ff]'
               }`
@@ -92,6 +92,27 @@ export default function Navbar() {
           >
             ABOUT
           </NavLink>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              const contactEl = document.getElementById('contact');
+              if (contactEl) {
+                contactEl.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState({}, '', '#contact');
+              } else {
+                window.location.href = '/#contact';
+              }
+            }}
+            className={`transition-all duration-200 cursor-pointer ${
+              location.hash === '#contact'
+                ? 'text-[#00f5ff] font-bold drop-shadow-[0_0_8px_rgba(0,245,255,0.6)] border-b border-[#00f5ff]/60 pb-1'
+                : 'text-[#b9caca] hover:text-[#00f5ff]'
+            }`}
+          >
+            GET IN TOUCH
+          </a>
         </nav>
 
         {/* Primary CTA Action */}
@@ -180,7 +201,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(false)}
             className={({ isActive }) =>
               `py-2 px-3 rounded-lg transition-colors ${
-                isActive
+                isActive && location.hash !== '#contact'
                   ? 'text-[#00f5ff] bg-[#1c1b23] font-bold border-l-2 border-[#00f5ff]'
                   : 'text-[#b9caca] hover:text-white'
               }`
@@ -188,6 +209,27 @@ export default function Navbar() {
           >
             ABOUT
           </NavLink>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              setMobileMenuOpen(false);
+              const contactEl = document.getElementById('contact');
+              if (contactEl) {
+                contactEl.scrollIntoView({ behavior: 'smooth' });
+                window.history.pushState({}, '', '#contact');
+              } else {
+                window.location.href = '/#contact';
+              }
+            }}
+            className={`py-2 px-3 rounded-lg transition-colors ${
+              location.hash === '#contact'
+                ? 'text-[#00f5ff] bg-[#1c1b23] font-bold border-l-2 border-[#00f5ff]'
+                : 'text-[#b9caca] hover:text-white'
+            }`}
+          >
+            GET IN TOUCH
+          </a>
 
           <Link
             to="/auth"
