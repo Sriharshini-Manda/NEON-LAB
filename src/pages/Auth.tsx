@@ -118,7 +118,7 @@ export default function Auth() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-12 flex flex-col items-center">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-12 flex flex-col items-center">
         
         {/* Terminal Header */}
         <div className="flex flex-col items-center text-center max-w-2xl mb-8">

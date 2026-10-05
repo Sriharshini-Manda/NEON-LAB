@@ -51,28 +51,28 @@ export default function Community() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 py-10 flex flex-col gap-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-10 flex flex-col gap-8 sm:gap-10">
         
         {/* 1. PAGE HERO */}
-        <section className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-4">
+        <section className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pt-2 sm:pt-4">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1c1b23] border border-[#00f5ff]/30 text-[#00f5ff] font-['JetBrains_Mono'] text-xs tracking-widest uppercase mb-4 shadow-[0_0_12px_rgba(0,245,255,0.2)]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1c1b23] border border-[#00f5ff]/30 text-[#00f5ff] font-['JetBrains_Mono'] text-[10px] sm:text-xs tracking-widest uppercase mb-4 shadow-[0_0_12px_rgba(0,245,255,0.2)]">
               <Users className="w-3.5 h-3.5" />
               <span>THE DEVELOPER LABORATORY NETWORK // CONNECT</span>
             </div>
-            <h1 className="font-['Syne'] font-extrabold text-4xl sm:text-6xl uppercase tracking-tight text-white leading-tight">
+            <h1 className="font-['Syne'] font-extrabold text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white leading-tight">
               NEON LAB <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-[#ff16f0] to-[#3bff17]">COMMUNITY</span>
             </h1>
-            <p className="mt-4 font-['Space_Grotesk'] text-lg md:text-xl text-[#b9caca] leading-relaxed">
+            <p className="mt-3 sm:mt-4 font-['Space_Grotesk'] text-base sm:text-lg md:text-xl text-[#b9caca] leading-relaxed">
               Find developers experimenting with the technologies you care about.
             </p>
           </div>
 
           {/* CTA: JOIN THE LAB */}
-          <div className="flex items-center gap-4 self-start lg:self-end">
+          <div className="flex items-center gap-4 self-start lg:self-end w-full sm:w-auto">
             <Link
               to="/auth"
-              className="px-8 py-3.5 rounded-full bg-[#00f5ff] hover:bg-[#3bff17] text-[#0e0d15] font-['JetBrains_Mono'] text-xs uppercase font-bold tracking-wider hover:shadow-[0_0_24px_rgba(0,245,255,0.6)] transition-all flex items-center gap-2 shadow-lg"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-full bg-[#00f5ff] hover:bg-[#3bff17] text-[#0e0d15] font-['JetBrains_Mono'] text-xs uppercase font-bold tracking-wider hover:shadow-[0_0_24px_rgba(0,245,255,0.6)] transition-all flex items-center justify-center gap-2 shadow-lg"
             >
               <Zap className="w-4 h-4 fill-current" />
               <span>JOIN THE LAB</span>
@@ -92,7 +92,7 @@ export default function Community() {
         </div>
 
         {/* 2. SEARCH & 3. INTEREST FILTERS */}
-        <section className="p-6 rounded-2xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col gap-6">
+        <section className="p-4 sm:p-6 rounded-2xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col gap-6">
           {/* Search Input */}
           <div className="relative w-full group">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-[#00f5ff]">

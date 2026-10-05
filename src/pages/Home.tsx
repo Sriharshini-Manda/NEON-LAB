@@ -46,36 +46,36 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-8 pb-16">
+      <section className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 pt-6 sm:pt-8 pb-12 sm:pb-16">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
           {/* Eyebrow Badge: EXPERIMENT. BUILD. CONNECT. */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2a2932]/80 backdrop-blur-xl border border-[#00f5ff]/30 shadow-[0_0_20px_rgba(0,245,255,0.25)] mb-6 group cursor-pointer transition-transform duration-300 hover:scale-105">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-[#2a2932]/80 backdrop-blur-xl border border-[#00f5ff]/30 shadow-[0_0_20px_rgba(0,245,255,0.25)] mb-6 group cursor-pointer transition-transform duration-300 hover:scale-105">
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3bff17] opacity-90"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#3bff17] shadow-[0_0_10px_rgba(59,255,23,0.9)]"></span>
             </span>
-            <span className="font-['JetBrains_Mono'] text-xs text-[#00f5ff] uppercase tracking-widest font-semibold flex items-center gap-1.5">
+            <span className="font-['JetBrains_Mono'] text-[10px] sm:text-xs text-[#00f5ff] uppercase tracking-widest font-semibold flex items-center gap-1.5">
               <Zap className="w-3.5 h-3.5 text-[#3bff17]" />
               EXPERIMENT. BUILD. CONNECT. <span className="text-[#b9caca]">//</span> NEON LAB
             </span>
           </div>
 
           {/* Headline with Syne & Neon Gradients */}
-          <h1 className="font-['Syne'] font-extrabold text-4xl sm:text-6xl md:text-7xl uppercase tracking-tight text-white mb-6 leading-[1.04]">
+          <h1 className="font-['Syne'] font-extrabold text-3xl sm:text-5xl md:text-7xl uppercase tracking-tight text-white mb-6 leading-[1.06] sm:leading-[1.04]">
             CODE MEETS <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-[#ff16f0] to-[#3bff17] drop-shadow-[0_0_35px_rgba(0,245,255,0.45)]">CHAOS</span> &amp; CHROMATIC <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff16f0] via-[#3bff17] to-[#00f5ff]">EXPERIMENTS</span>
           </h1>
 
           {/* Subtitle explicitly communicating Lab + Community */}
-          <p className="font-['Space_Grotesk'] text-lg md:text-xl text-[#b9caca] max-w-3xl mb-10 leading-relaxed">
+          <p className="font-['Space_Grotesk'] text-base sm:text-lg md:text-xl text-[#b9caca] max-w-3xl mb-8 sm:mb-10 leading-relaxed px-2 sm:px-0">
             An experimental technology laboratory and developer community exploring the sharp bleeding edges of frontend engineering, WebGL shaders, generative AI, RAG, and tactile cybernetic systems.
           </p>
 
           {/* Hero CTAs */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 w-full sm:w-auto px-2 sm:px-0">
             {/* Primary CTA: EXPLORE EXPERIMENTS */}
             <Link
               to="/experiments"
-              className="group relative px-8 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#0e0d15] font-bold overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_0_24px_rgba(0,245,255,0.5)] hover:shadow-[0_0_36px_rgba(255,22,240,0.7)] flex items-center gap-2"
+              className="group relative w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#0e0d15] font-bold overflow-hidden transition-all duration-300 hover:-translate-y-1 shadow-[0_0_24px_rgba(0,245,255,0.5)] hover:shadow-[0_0_36px_rgba(255,22,240,0.7)] flex items-center justify-center gap-2"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#00f5ff] via-[#ff16f0] to-[#3bff17] transition-transform duration-500 group-hover:scale-105"></div>
               <span className="relative z-10 flex items-center gap-2">
@@ -86,7 +86,7 @@ export default function Home() {
             {/* Secondary CTA: JOIN THE LAB (navigates to /auth) */}
             <Link
               to="/auth"
-              className="group px-8 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#e9feff] bg-[#2a2932]/90 hover:bg-[#35343d] border border-[#00f5ff]/30 transition-all duration-300 hover:-translate-y-1 backdrop-blur-xl shadow-[0_0_16px_rgba(0,245,255,0.25)] flex items-center gap-2"
+              className="group w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#e9feff] bg-[#2a2932]/90 hover:bg-[#35343d] border border-[#00f5ff]/30 transition-all duration-300 hover:-translate-y-1 backdrop-blur-xl shadow-[0_0_16px_rgba(0,245,255,0.25)] flex items-center justify-center gap-2"
             >
               <Zap className="w-4 h-4 text-[#3bff17]" />
               <span>JOIN THE LAB</span>
@@ -95,7 +95,7 @@ export default function Home() {
             {/* Tertiary Link: Inspect Tech Stack */}
             <Link
               to="/about"
-              className="px-6 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#b9caca] hover:text-[#00f5ff] transition-colors flex items-center gap-2"
+              className="w-full sm:w-auto px-6 py-3.5 rounded-full font-['JetBrains_Mono'] text-xs uppercase tracking-wider text-[#b9caca] hover:text-[#00f5ff] transition-colors flex items-center justify-center gap-2"
             >
               <Terminal className="w-4 h-4 text-[#ff16f0]" />
               <span>Inspect Tech Stack</span>

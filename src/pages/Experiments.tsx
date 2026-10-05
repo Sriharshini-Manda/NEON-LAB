@@ -164,10 +164,10 @@ export default function Experiments() {
   return (
     <div className="flex flex-col w-full">
       {/* Repository Header */}
-      <section className="max-w-[1440px] mx-auto px-6 md:px-12 pt-8 pb-10 w-full">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 pt-6 sm:pt-8 pb-10 w-full">
         {/* Section Pill */}
-        <div className="flex items-center gap-4 mb-4">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2a2932]/80 text-[#00f5ff] font-['JetBrains_Mono'] text-xs tracking-widest uppercase border border-[#00f5ff]/20">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#2a2932]/80 text-[#00f5ff] font-['JetBrains_Mono'] text-[10px] sm:text-xs tracking-widest uppercase border border-[#00f5ff]/20">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00f5ff] shadow-[0_0_8px_#00f5ff]"></span>
             INDEX OF LAB EXPERIMENTS // TOTAL: 12 PROTOCOLS
           </span>
@@ -178,40 +178,40 @@ export default function Experiments() {
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <h1 className="font-['Syne'] font-extrabold text-4xl sm:text-6xl uppercase tracking-tight text-white drop-shadow-[0_0_24px_rgba(0,245,255,0.25)]">
+            <h1 className="font-['Syne'] font-extrabold text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-white drop-shadow-[0_0_24px_rgba(0,245,255,0.25)]">
               THE EXPERIMENT <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f5ff] via-[#ff16f0] to-[#3bff17]">
                 REPOSITORY
               </span>
             </h1>
-            <p className="mt-4 font-['Space_Grotesk'] text-lg text-[#b9caca] max-w-2xl leading-relaxed">
+            <p className="mt-3 sm:mt-4 font-['Space_Grotesk'] text-base sm:text-lg text-[#b9caca] max-w-2xl leading-relaxed">
               Interactive prototypes, WebGL shaders, experimental AI interfaces, and frontend torture-tests pushed directly from the workbench.
             </p>
           </div>
 
           {/* Telemetry Stats Panel */}
-          <div className="flex items-center gap-4 p-3 rounded-2xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-md self-start lg:self-end">
-            <div className="px-4 py-1 text-left">
-              <span className="block font-['JetBrains_Mono'] text-[10px] text-[#b9caca] uppercase">ACTIVE RUNTIMES</span>
-              <span className="font-['Syne'] font-bold text-xl text-[#3bff17]">12 / 12</span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 p-2.5 sm:p-3 rounded-2xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-md self-start lg:self-end">
+            <div className="px-3 sm:px-4 py-1 text-left">
+              <span className="block font-['JetBrains_Mono'] text-[9px] sm:text-[10px] text-[#b9caca] uppercase">ACTIVE RUNTIMES</span>
+              <span className="font-['Syne'] font-bold text-lg sm:text-xl text-[#3bff17]">12 / 12</span>
             </div>
             <div className="h-8 w-px bg-white/10"></div>
-            <div className="px-4 py-1 text-left">
-              <span className="block font-['JetBrains_Mono'] text-[10px] text-[#b9caca] uppercase">AVG FPS</span>
-              <span className="font-['Syne'] font-bold text-xl text-[#00f5ff]">
+            <div className="px-3 sm:px-4 py-1 text-left">
+              <span className="block font-['JetBrains_Mono'] text-[9px] sm:text-[10px] text-[#b9caca] uppercase">AVG FPS</span>
+              <span className="font-['Syne'] font-bold text-lg sm:text-xl text-[#00f5ff]">
                 120<span className="text-xs text-[#b9caca] ml-1">Hz</span>
               </span>
             </div>
             <div className="h-8 w-px bg-white/10"></div>
-            <div className="px-4 py-1 text-left">
-              <span className="block font-['JetBrains_Mono'] text-[10px] text-[#b9caca] uppercase">SYNTHESIS</span>
-              <span className="font-['Syne'] font-bold text-xl text-[#ff16f0]">STABLE</span>
+            <div className="px-3 sm:px-4 py-1 text-left">
+              <span className="block font-['JetBrains_Mono'] text-[9px] sm:text-[10px] text-[#b9caca] uppercase">SYNTHESIS</span>
+              <span className="font-['Syne'] font-bold text-lg sm:text-xl text-[#ff16f0]">STABLE</span>
             </div>
           </div>
         </div>
 
         {/* Controls & Search Toolbar */}
-        <div className="mt-10 p-5 rounded-2xl bg-[#1c1b23]/90 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col gap-4">
+        <div className="mt-8 sm:mt-10 p-4 sm:p-5 rounded-2xl bg-[#1c1b23]/90 border border-white/10 backdrop-blur-xl shadow-xl flex flex-col gap-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Search Field */}
             <div className="relative w-full md:w-96 group">
@@ -233,7 +233,7 @@ export default function Experiments() {
             </div>
 
             {/* Sort & View Controls */}
-            <div className="flex flex-wrap items-center justify-between w-full md:w-auto gap-4">
+            <div className="flex flex-wrap items-center justify-between w-full md:w-auto gap-3 sm:gap-4">
               <div className="flex items-center gap-2 bg-[#0e0d15] border border-white/10 px-3 py-1.5 rounded-xl">
                 <SlidersHorizontal className="w-3.5 h-3.5 text-[#b9caca]" />
                 <label className="font-['JetBrains_Mono'] text-xs text-[#b9caca]">SORT:</label>
@@ -272,7 +272,7 @@ export default function Experiments() {
           </div>
 
           {/* Filter Category Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 -mb-1">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 -mb-1 scrollbar-none">
             {categories.map((cat) => (
               <button
                 key={cat.id}

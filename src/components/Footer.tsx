@@ -50,7 +50,7 @@ export default function Footer() {
       <section 
         id="contact" 
         aria-labelledby="contact-heading"
-        className="relative max-w-[1440px] mx-auto px-6 md:px-12 pt-16 pb-12 w-full scroll-mt-24 overflow-hidden"
+        className="relative max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 pt-10 sm:pt-16 pb-10 sm:pb-12 w-full scroll-mt-24 overflow-hidden"
       >
         {/* Background Ambient Glows */}
         <div className="absolute top-10 left-1/4 w-80 h-80 bg-[#00f5ff]/15 rounded-full blur-[110px] pointer-events-none"></div>

@@ -52,10 +52,10 @@ export default function About() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 py-10 flex flex-col gap-16">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-10 flex flex-col gap-10 sm:gap-16">
         
         {/* 1. INTRO & PROFILE SECTION */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Authentic Profile Card */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="relative rounded-2xl bg-[#1c1b23]/90 border border-white/10 p-5 shadow-2xl overflow-hidden group">
