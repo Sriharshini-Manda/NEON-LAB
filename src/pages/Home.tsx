@@ -141,35 +141,38 @@ export default function Home() {
             {/* Split Viewport */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 rounded-2xl overflow-hidden bg-[#0e0d15] border border-white/5">
               {/* Graphic Canvas Simulation */}
-              <div className="lg:col-span-7 relative min-h-[320px] rounded-xl overflow-hidden flex flex-col justify-between p-6 bg-gradient-to-br from-[#120f24] via-[#0e0d15] to-[#1c1736] group">
-                <div className="absolute inset-0 opacity-40 pointer-events-none">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-gradient-to-tr from-[#00f5ff] via-[#ff16f0] to-[#3bff17] blur-3xl animate-pulse"></div>
-                  <div className="absolute inset-0 bg-[radial-gradient(#00f5ff_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-                </div>
+              <div className="lg:col-span-7 relative min-h-[320px] rounded-xl overflow-hidden flex flex-col justify-between p-6 group">
+                {/* Background image & gradient overlay */}
+                <img 
+                  src="/assets/chromatic_warp_core.jpg" 
+                  alt="Chromatic Warp Core" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-[#0e0d15]/50 to-black/30 pointer-events-none"></div>
 
                 {/* Floating Micro Badge */}
-                <div className="relative z-10 flex items-center justify-between w-full">
-                  <span className="px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/30 backdrop-blur-md font-['JetBrains_Mono'] text-xs text-[#00f5ff] shadow-[0_0_12px_rgba(0,245,255,0.4)] flex items-center gap-1.5">
+                <div className="relative z-10 flex items-center justify-between w-full flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/40 backdrop-blur-md font-['JetBrains_Mono'] text-xs text-[#00f5ff] shadow-[0_0_12px_rgba(0,245,255,0.4)] flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-[#00f5ff] animate-ping"></span>
-                    CHROMATIC_MUTATOR_PASS
+                    FLT02_MUTATION_SEED_2
                   </span>
-                  <span className="font-['JetBrains_Mono'] text-xs text-[#b9caca] bg-[#1c1b23] px-2.5 py-1 rounded border border-white/5">
-                    SEED: {warpSeed}
+                  <span className="font-['JetBrains_Mono'] text-xs text-[#3bff17] bg-[#0e0d15]/90 px-3 py-1 rounded-full border border-[#3bff17]/40 backdrop-blur-md shadow-[0_0_10px_rgba(59,255,23,0.3)]">
+                    2,840,000 PARTICLES
                   </span>
                 </div>
 
                 {/* Interactive Controls Overlay */}
                 <div className="relative z-10 flex flex-wrap items-end justify-between gap-4 mt-16">
                   <div>
-                    <h3 className="font-['Syne'] font-bold text-xl text-[#e9feff] tracking-wide">CHROMATIC WARP CORE</h3>
-                    <p className="font-['Space_Grotesk'] text-xs text-[#b9caca]">Interactive CSS color space &amp; gradient mutator sandbox</p>
+                    <h3 className="font-['Syne'] font-bold text-xl text-[#e9feff] tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">CHROMATIC WARP CORE</h3>
+                    <p className="font-['Space_Grotesk'] text-xs text-[#b9caca] drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">Interactive CSS color space &amp; gradient mutator sandbox</p>
                   </div>
                   <button
                     onClick={handleMutate}
-                    className="px-4 py-2 rounded-xl bg-[#2a2932] hover:bg-[#00f5ff] hover:text-[#0e0d15] text-[#00f5ff] border border-[#00f5ff]/30 font-['JetBrains_Mono'] text-xs font-semibold transition-all duration-200 flex items-center gap-2 shadow-[0_0_12px_rgba(0,245,255,0.2)] cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-[#2a2932]/90 backdrop-blur-md hover:bg-[#00f5ff] hover:text-[#0e0d15] text-[#00f5ff] border border-[#00f5ff]/40 font-['JetBrains_Mono'] text-xs font-semibold transition-all duration-200 flex items-center gap-2 shadow-[0_0_12px_rgba(0,245,255,0.3)] cursor-pointer"
                   >
                     <Sliders className="w-3.5 h-3.5" />
-                    <span>MUTATE SEED</span>
+                    <span>MUTATE SEED ({warpSeed})</span>
                   </button>
                 </div>
               </div>
@@ -386,22 +389,17 @@ export default function Home() {
           <div className="group relative rounded-3xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(0,245,255,0.2)]">
             <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#00f5ff]/10 blur-[60px] group-hover:bg-[#00f5ff]/25 transition-all duration-500 pointer-events-none"></div>
             <div>
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center p-4">
-                <svg className="w-full h-full" viewBox="0 0 400 180" fill="none">
-                  <line x1="60" y1="40" x2="200" y2="90" stroke="#00f5ff" strokeWidth="2" strokeDasharray="4 2" />
-                  <line x1="60" y1="140" x2="200" y2="90" stroke="#ff16f0" strokeWidth="1.5" />
-                  <line x1="200" y1="90" x2="340" y2="50" stroke="#00f5ff" strokeWidth="2" />
-                  <line x1="200" y1="90" x2="330" y2="130" stroke="#3bff17" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <circle cx="60" cy="40" r="6" fill="#00f5ff" />
-                  <circle cx="60" cy="140" r="5" fill="#ff16f0" />
-                  <circle cx="200" cy="90" r="10" fill="#ffffff" className="animate-pulse" />
-                  <circle cx="340" cy="50" r="6" fill="#00f5ff" />
-                  <circle cx="330" cy="130" r="6" fill="#3bff17" />
-                </svg>
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/30 font-['JetBrains_Mono'] text-[11px] text-[#00f5ff]">
-                  GENERATIVE_AI
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center">
+                <img 
+                  src="/assets/neural_canvas.jpg" 
+                  alt="Neural Canvas V2" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-transparent to-black/20 pointer-events-none"></div>
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/40 font-['JetBrains_Mono'] text-[11px] text-[#00f5ff] backdrop-blur-md shadow-[0_0_10px_rgba(0,245,255,0.3)]">
+                  LARGE SPACE EXPLORER
                 </div>
-                <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-[#0e0d15]/80 font-['JetBrains_Mono'] text-[10px] text-[#b9caca]">
+                <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#0e0d15]/90 border border-white/10 font-['JetBrains_Mono'] text-[10px] text-[#b9caca] backdrop-blur-md">
                   TARGET: 60 FPS
                 </div>
               </div>
@@ -433,22 +431,17 @@ export default function Home() {
           <div className="group relative rounded-3xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(59,255,23,0.2)]">
             <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#3bff17]/10 blur-[60px] group-hover:bg-[#3bff17]/25 transition-all duration-500 pointer-events-none"></div>
             <div>
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center p-4">
-                <div className="relative flex items-center justify-center">
-                  <span className="font-['Syne'] text-5xl font-black text-transparent opacity-60 transform -skew-x-12" style={{ WebkitTextStroke: '1.5px #ff16f0' }}>
-                    VOX
-                  </span>
-                  <span className="absolute font-['Syne'] text-5xl font-black text-transparent" style={{ WebkitTextStroke: '1.5px #00f5ff' }}>
-                    VOX
-                  </span>
-                  <span className="absolute font-['Syne'] text-5xl font-bold text-white opacity-80 mix-blend-overlay">
-                    VOX
-                  </span>
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center">
+                <img 
+                  src="/assets/hyper_physics_ui.jpg" 
+                  alt="Hyper-Physics UI" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-transparent to-black/20 pointer-events-none"></div>
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#3bff17]/40 font-['JetBrains_Mono'] text-[11px] text-[#3bff17] backdrop-blur-md shadow-[0_0_10px_rgba(59,255,23,0.3)]">
+                  SIMD INTERFACE
                 </div>
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#3bff17]/30 font-['JetBrains_Mono'] text-[11px] text-[#3bff17]">
-                  TACTILE_PHYSICS
-                </div>
-                <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-[#0e0d15]/80 font-['JetBrains_Mono'] text-[10px] text-[#b9caca]">
+                <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#0e0d15]/90 border border-white/10 font-['JetBrains_Mono'] text-[10px] text-[#b9caca] backdrop-blur-md">
                   PHYSICS SPEC
                 </div>
               </div>
@@ -480,16 +473,17 @@ export default function Home() {
           <div className="group relative rounded-3xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(255,22,240,0.2)]">
             <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#ff16f0]/10 blur-[60px] group-hover:bg-[#ff16f0]/25 transition-all duration-500 pointer-events-none"></div>
             <div>
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center p-4">
-                <svg className="w-full h-full" viewBox="0 0 300 140" fill="none">
-                  <path d="M 20 70 Q 70 20 120 70 T 220 70 T 280 70" stroke="#ff16f0" strokeWidth="2.5" opacity="0.8" fill="none" />
-                  <path d="M 40 70 Q 90 110 140 70 T 240 70" stroke="#00f5ff" strokeWidth="2" opacity="0.7" fill="none" />
-                  <path d="M 10 70 Q 60 90 110 70 T 210 70" stroke="#3bff17" strokeWidth="1.5" opacity="0.6" fill="none" />
-                </svg>
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#ff16f0]/30 font-['JetBrains_Mono'] text-[11px] text-[#ff16f0]">
-                  AUDIO_REACTIVE
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center">
+                <img 
+                  src="/assets/chromatic_soundwave.jpg" 
+                  alt="Chromatic Soundwave" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-transparent to-black/20 pointer-events-none"></div>
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#ff16f0]/40 font-['JetBrains_Mono'] text-[11px] text-[#ff16f0] backdrop-blur-md shadow-[0_0_10px_rgba(255,22,240,0.3)]">
+                  AUDIO REACTIVE
                 </div>
-                <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-[#0e0d15]/80 font-['JetBrains_Mono'] text-[10px] text-[#b9caca]">
+                <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#0e0d15]/90 border border-white/10 font-['JetBrains_Mono'] text-[10px] text-[#b9caca] backdrop-blur-md">
                   AUDIO SPEC
                 </div>
               </div>
@@ -521,24 +515,17 @@ export default function Home() {
           <div className="group relative rounded-3xl bg-[#1c1b23]/80 border border-white/10 backdrop-blur-xl p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_40px_rgba(0,245,255,0.2)]">
             <div className="absolute -top-20 -right-20 w-48 h-48 rounded-full bg-[#00f5ff]/10 blur-[60px] group-hover:bg-[#00f5ff]/25 transition-all duration-500 pointer-events-none"></div>
             <div>
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 p-4 flex flex-col justify-center">
-                <div className="bg-[#1c1b23] rounded-xl p-3 border border-white/10 shadow-lg">
-                  <div className="flex items-center gap-1.5 pb-2 mb-2 border-b border-white/10">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
-                    <span className="ml-2 font-['JetBrains_Mono'] text-[10px] text-[#b9caca]">synapse-agent: ~/exec</span>
-                  </div>
-                  <div className="space-y-1 font-['JetBrains_Mono'] text-[11px]">
-                    <div className="text-[#3bff17]">$ agent.streamPrompt("graph")</div>
-                    <div className="text-[#b9caca]">&gt; Evaluating 12 tree nodes [OK]</div>
-                    <div className="text-[#00f5ff]">&gt; Command dispatch ready</div>
-                  </div>
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden mb-5 bg-[#0e0d15] border border-white/5 flex items-center justify-center">
+                <img 
+                  src="/assets/synapse_terminal.jpg" 
+                  alt="Synapse Terminal" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-transparent to-black/20 pointer-events-none"></div>
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/40 font-['JetBrains_Mono'] text-[11px] text-[#00f5ff] backdrop-blur-md shadow-[0_0_10px_rgba(0,245,255,0.3)]">
+                  AI AGENT KERNEL
                 </div>
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/30 font-['JetBrains_Mono'] text-[11px] text-[#00f5ff]">
-                  AUTONOMOUS_CLI
-                </div>
-                <div className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-[#0e0d15]/80 font-['JetBrains_Mono'] text-[10px] text-[#b9caca]">
+                <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[#0e0d15]/90 border border-white/10 font-['JetBrains_Mono'] text-[10px] text-[#b9caca] backdrop-blur-md">
                   UI PROTOTYPE
                 </div>
               </div>

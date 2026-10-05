@@ -50,6 +50,24 @@ export default function Experiments() {
 
   // Helper to render interactive visual mockup for each experiment
   const renderCanvasMockup = (exp: Experiment) => {
+    if (exp.imageUrl) {
+      return (
+        <div className="relative w-full h-full">
+          <img 
+            src={exp.imageUrl} 
+            alt={exp.title} 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0e0d15] via-transparent to-black/20 pointer-events-none"></div>
+          {exp.badgeLabel && (
+            <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0e0d15]/90 border border-[#00f5ff]/40 font-['JetBrains_Mono'] text-[11px] text-[#00f5ff] backdrop-blur-md shadow-[0_0_10px_rgba(0,245,255,0.3)]">
+              {exp.badgeLabel}
+            </div>
+          )}
+        </div>
+      );
+    }
+
     switch (exp.canvasType) {
       case 'nodeGraph':
         return (
